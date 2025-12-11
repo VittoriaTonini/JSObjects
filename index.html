@@ -51,7 +51,7 @@
         county: "Devon",
         country: "England"
       },
-      greeting: function(){ //questo è un metodo dell'oggetto persona
+      greeting: function () { //questo è un metodo dell'oggetto persona
         console.log(`Hi, I'm ${this.fname}`) //usiamo la keyword this per fare riferimento all'oggetto in cui ci troviamo (potevamo usare anche person)
       }
     }
@@ -69,10 +69,38 @@
     console.log(person["address"]["town"]);
 
     //come aggiornare un oggetto
-    person.fname = "Stella"; 
+    person.fname = "Stella";
     person.favColor = "yellow"; //posso anche aggiungere proprietà a un oggetto
     console.log(person);
 
+    //OOP in JS
+    //creazione di una classe e del suo costruttore
+    class Person {
+      constructor(fname, lname, age, gender, interests) {
+        this.fname = fname;
+        this.lname = lname;
+        this.age = age;
+        this.gender = gender;
+        this.interests = interests;
+      }
+
+      greeting() {
+        console.log(`Hi, I'm ${this.fname}`); //qui this punterà all'oggetto su cui verrà chiamato il metodo: es. p1.greeting(); punterà a p1
+      }
+
+      bio() {
+        console.log(`${this.fname} ${this.lname} is
+        ${(this.gender == "Male" ? "a boy" : "a girl")} and is ${this.age} years old.
+        ${(this.gender == "Male" ? "His" : "Her")} interest are ${this.interests.join(", ")}`);
+      }
+    }
+
+    //creazione di istanze della classe Person
+    const person1 = new Person("Lilo", "Rose", 24, "Female", ["singing", "swimming"]);
+    const person2 = new Person("Noah", "Blue", 26, "Male", ["cooking", "gym"]);
+
+    console.log(person1);
+    console.log(person2);
   </script>
 </body>
 
