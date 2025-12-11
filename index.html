@@ -52,7 +52,7 @@
         country: "England"
       },
       greeting: function(){ //questo è un metodo dell'oggetto persona
-        console.log(`Hi, I'm ${person.fname}`)
+        console.log(`Hi, I'm ${this.fname}`) //usiamo la keyword this per fare riferimento all'oggetto in cui ci troviamo (potevamo usare anche person)
       }
     }
 
