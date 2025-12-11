@@ -91,7 +91,7 @@
       bio() {
         console.log(`${this.fname} ${this.lname} is
         ${(this.gender == "Male" ? "a boy" : "a girl")} and is ${this.age} years old.
-        ${(this.gender == "Male" ? "His" : "Her")} interest are ${this.interests.join(", ")}`);
+        ${(this.gender == "Male" ? "His" : "Her")} interests are ${this.interests.join(", ")}`);
       }
     }
 
@@ -101,6 +101,12 @@
 
     console.log(person1);
     console.log(person2);
+
+    person1.greeting();
+    person2.greeting();
+
+    person1.bio();
+    person2.bio();
   </script>
 </body>
 
