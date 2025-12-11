@@ -18,20 +18,6 @@
     p {
       font-size: 1.2em;
     }
-
-    input {
-      display: block;
-      margin-bottom: 20px;
-    }
-
-    button {
-      padding: 20px;
-      background-color: #e3dc11;
-      color: #9966cc;
-      border: 2px solid #bcb60f;
-      border-radius: 10px;
-      cursor: pointer;
-    }
   </style>
 </head>
 
@@ -107,6 +93,33 @@
 
     person1.bio();
     person2.bio();
+
+    //classi ed ereditarietà
+    //creazione di una classe figlia
+    class Teacher extends Person {
+      constructor(fname, lname, age, gender, interests, subject) {
+        super(fname, lname, age, gender, interests); // richiama il costruttore di Person
+        this.subject = subject; // proprietà aggiuntiva della classe figlia
+      }
+
+      teach() {
+        console.log(`${this.fname} teaches ${this.subject}`);
+      }
+
+      //ovveride greeting method
+      greeting() {
+        super.greeting(); // chiama il metodo vecchio, quello di Person
+        console.log(`I teach ${this.subject}.`); //metodo nuovo
+      }
+    }
+
+    //creazione di un'istanza della classe figlia Teacher
+    const teacher = new Teacher("Violet", "Cline", 31, "Female", ["flowers", "cars"], "Maths");
+
+    console.log(teacher);
+    teacher.teach();
+    teacher.greeting();
+
   </script>
 </body>
 
