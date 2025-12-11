@@ -40,7 +40,7 @@
   <p>An object is a collection of related data and is made up of properties and methods.</p>
 
   <script>
-    const person = {
+    const person = { //essendo una costante non può cambiare la sua natura, per esempio: non posso svuotare la const person o non posso farla diventare un array. Posso cambiare però le sue proprietà
       fname: "Luna", //questa è un coppia key : value
       lname: "Lovegood",
       age: 11,
@@ -56,9 +56,23 @@
       }
     }
 
-    console.log(person.name);
+    //dot notation: accedo tramite il .
+    console.log(person.fname);
     console.log(person.age);
     console.log(person.interests[2]);
+    console.log(person.address.town);
+    person.greeting(); //i metodi vanno sempre chiamati con la dot notation
+
+    //bracket notation: accedo tramite []
+    console.log(person["fname"]);
+    console.log(person["interests"][1]);
+    console.log(person["address"]["town"]);
+
+    //come aggiornare un oggetto
+    person.fname = "Stella"; 
+    person.favColor = "yellow"; //posso anche aggiungere proprietà a un oggetto
+    console.log(person);
+
   </script>
 </body>
 
