@@ -102,7 +102,16 @@
         this.subject = subject; // proprietà aggiuntiva della classe figlia
       }
 
-      teach() {
+      get subject(){
+        return this._subject; //nei getters e nei setters dobbiamo mettere l'underscore
+      }
+
+      set subject(newSubject){
+        this._subject = newSubject;
+      }
+
+      //in una classe figlia posso aggiungere metodi extra      
+      teach() { 
         console.log(`${this.fname} teaches ${this.subject}`);
       }
 
@@ -117,6 +126,7 @@
     const teacher = new Teacher("Violet", "Cline", 31, "Female", ["flowers", "cars"], "Maths");
 
     console.log(teacher);
+    teacher.subject = "English"; //questo aggiorna il valore, ma possiamo usare anche i getters e i setters
     teacher.teach();
     teacher.greeting();
 
