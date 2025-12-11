@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>JS objects</title>
+  <style>
+    body {
+      font-family: Calibri, sans-serif;
+      background-color: #f3e8ff;
+      color: #9966cc;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2em;
+    }
+
+    input {
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 20px;
+      background-color: #e3dc11;
+      color: #9966cc;
+      border: 2px solid #bcb60f;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>JavaScript objects</h1>
+  <p>An object is a collection of related data and is made up of properties and methods.</p>
+
+  <script>
+    const person = {
+      fname: "Luna", //questa è un coppia key : value
+      lname: "Lovegood",
+      age: 11,
+      gender: "Female",
+      interests: ["reading", "magical creatures", "magic", "exploring nature"],
+      address: {
+        town: "Ottery St Catchpole",
+        county: "Devon",
+        country: "England"
+      },
+      greeting: function(){ //questo è un metodo dell'oggetto persona
+        console.log(`Hi, I'm ${person.fname}`)
+      }
+    }
+
+    console.log(person.name);
+    console.log(person.age);
+    console.log(person.interests[2]);
+  </script>
+</body>
+
+</html>
